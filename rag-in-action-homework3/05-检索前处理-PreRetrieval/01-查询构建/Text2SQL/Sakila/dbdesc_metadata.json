@@ -1,0 +1,382 @@
+[
+  {
+    "table_name": "actor",
+    "column_name": "actor_id",
+    "description": "Primary key. Unique identifier for each actor."
+  },
+  {
+    "table_name": "actor",
+    "column_name": "first_name",
+    "description": "Actor's first name."
+  },
+  {
+    "table_name": "actor",
+    "column_name": "last_name",
+    "description": "Actor's last name."
+  },
+  {
+    "table_name": "actor",
+    "column_name": "last_update",
+    "description": "Timestamp of the last update to this record."
+  },
+  {
+    "table_name": "address",
+    "column_name": "address",
+    "description": "Street address."
+  },
+  {
+    "table_name": "address",
+    "column_name": "address2",
+    "description": "Additional address info (optional)."
+  },
+  {
+    "table_name": "address",
+    "column_name": "address_id",
+    "description": "Primary key. Unique identifier for each address record."
+  },
+  {
+    "table_name": "address",
+    "column_name": "city_id",
+    "description": "Foreign key to the city table."
+  },
+  {
+    "table_name": "address",
+    "column_name": "district",
+    "description": "District or state name."
+  },
+  {
+    "table_name": "address",
+    "column_name": "last_update",
+    "description": "Timestamp of the last update to this record."
+  },
+  {
+    "table_name": "address",
+    "column_name": "location",
+    "description": "Geographic location (geometry type)."
+  },
+  {
+    "table_name": "address",
+    "column_name": "phone",
+    "description": "Contact phone number."
+  },
+  {
+    "table_name": "address",
+    "column_name": "postal_code",
+    "description": "Postal or ZIP code."
+  },
+  {
+    "table_name": "category",
+    "column_name": "category_id",
+    "description": "Primary key. Unique identifier for each category."
+  },
+  {
+    "table_name": "category",
+    "column_name": "last_update",
+    "description": "Timestamp of the last update to this record."
+  },
+  {
+    "table_name": "category",
+    "column_name": "name",
+    "description": "Category name (e.g., Action, Comedy)."
+  },
+  {
+    "table_name": "city",
+    "column_name": "city",
+    "description": "Name of the city."
+  },
+  {
+    "table_name": "city",
+    "column_name": "city_id",
+    "description": "Primary key. Unique identifier for each city."
+  },
+  {
+    "table_name": "city",
+    "column_name": "country_id",
+    "description": "Foreign key to the country table."
+  },
+  {
+    "table_name": "city",
+    "column_name": "last_update",
+    "description": "Timestamp of the last update to this record."
+  },
+  {
+    "table_name": "country",
+    "column_name": "country",
+    "description": "Name of the country."
+  },
+  {
+    "table_name": "country",
+    "column_name": "country_id",
+    "description": "Primary key. Unique identifier for each country."
+  },
+  {
+    "table_name": "country",
+    "column_name": "last_update",
+    "description": "Timestamp of the last update to this record."
+  },
+  {
+    "table_name": "customer",
+    "column_name": "active",
+    "description": "Indicator if the customer is active (1) or inactive (0)."
+  },
+  {
+    "table_name": "customer",
+    "column_name": "address_id",
+    "description": "Foreign key to the address table."
+  },
+  {
+    "table_name": "customer",
+    "column_name": "create_date",
+    "description": "Date when the customer account was created."
+  },
+  {
+    "table_name": "customer",
+    "column_name": "customer_id",
+    "description": "Primary key. Unique identifier for each customer."
+  },
+  {
+    "table_name": "customer",
+    "column_name": "email",
+    "description": "Customer's email address."
+  },
+  {
+    "table_name": "customer",
+    "column_name": "first_name",
+    "description": "Customer's first name."
+  },
+  {
+    "table_name": "customer",
+    "column_name": "last_name",
+    "description": "Customer's last name."
+  },
+  {
+    "table_name": "customer",
+    "column_name": "last_update",
+    "description": "Timestamp of the last update to this record."
+  },
+  {
+    "table_name": "customer",
+    "column_name": "store_id",
+    "description": "Foreign key to the store where the customer is registered."
+  },
+  {
+    "table_name": "film",
+    "column_name": "description",
+    "description": "Brief description or synopsis of the film."
+  },
+  {
+    "table_name": "film",
+    "column_name": "film_id",
+    "description": "Primary key. Unique identifier for each film."
+  },
+  {
+    "table_name": "film",
+    "column_name": "language_id",
+    "description": "Foreign key to the language table."
+  },
+  {
+    "table_name": "film",
+    "column_name": "last_update",
+    "description": "Timestamp of the last update to this record."
+  },
+  {
+    "table_name": "film",
+    "column_name": "length",
+    "description": "Length of the film in minutes."
+  },
+  {
+    "table_name": "film",
+    "column_name": "original_language_id",
+    "description": "Foreign key to the original language, if applicable."
+  },
+  {
+    "table_name": "film",
+    "column_name": "rating",
+    "description": "MPAA rating (e.g., G, PG-13)."
+  },
+  {
+    "table_name": "film",
+    "column_name": "release_year",
+    "description": "Year the film was released."
+  },
+  {
+    "table_name": "film",
+    "column_name": "rental_duration",
+    "description": "Default rental period (in days)."
+  },
+  {
+    "table_name": "film",
+    "column_name": "rental_rate",
+    "description": "Cost to rent the film."
+  },
+  {
+    "table_name": "film",
+    "column_name": "replacement_cost",
+    "description": "Cost to replace the film."
+  },
+  {
+    "table_name": "film",
+    "column_name": "title",
+    "description": "Title of the film."
+  },
+  {
+    "table_name": "inventory",
+    "column_name": "film_id",
+    "description": "Foreign key to the film available in inventory."
+  },
+  {
+    "table_name": "inventory",
+    "column_name": "inventory_id",
+    "description": "Primary key. Unique identifier for each inventory item."
+  },
+  {
+    "table_name": "inventory",
+    "column_name": "last_update",
+    "description": "Timestamp of the last update to this record."
+  },
+  {
+    "table_name": "inventory",
+    "column_name": "store_id",
+    "description": "Foreign key to the store where inventory is held."
+  },
+  {
+    "table_name": "payment",
+    "column_name": "amount",
+    "description": "Payment amount in USD."
+  },
+  {
+    "table_name": "payment",
+    "column_name": "customer_id",
+    "description": "Foreign key to the customer who made the payment."
+  },
+  {
+    "table_name": "payment",
+    "column_name": "last_update",
+    "description": "Timestamp of the last update to this record."
+  },
+  {
+    "table_name": "payment",
+    "column_name": "payment_date",
+    "description": "Date and time when the payment was made."
+  },
+  {
+    "table_name": "payment",
+    "column_name": "payment_id",
+    "description": "Primary key. Unique identifier for each payment transaction."
+  },
+  {
+    "table_name": "payment",
+    "column_name": "rental_id",
+    "description": "Foreign key to the rental for which the payment was made."
+  },
+  {
+    "table_name": "payment",
+    "column_name": "staff_id",
+    "description": "Foreign key to the staff member who processed the payment."
+  },
+  {
+    "table_name": "rental",
+    "column_name": "customer_id",
+    "description": "Foreign key to the customer renting the film."
+  },
+  {
+    "table_name": "rental",
+    "column_name": "inventory_id",
+    "description": "Foreign key to the inventory item rented."
+  },
+  {
+    "table_name": "rental",
+    "column_name": "last_update",
+    "description": "Timestamp of the last update to this record."
+  },
+  {
+    "table_name": "rental",
+    "column_name": "rental_date",
+    "description": "Date and time when the rental started."
+  },
+  {
+    "table_name": "rental",
+    "column_name": "rental_id",
+    "description": "Primary key. Unique identifier for each rental transaction."
+  },
+  {
+    "table_name": "rental",
+    "column_name": "return_date",
+    "description": "Date and time when the film was returned."
+  },
+  {
+    "table_name": "rental",
+    "column_name": "staff_id",
+    "description": "Foreign key to the staff member who processed the rental."
+  },
+  {
+    "table_name": "staff",
+    "column_name": "active",
+    "description": "Indicator if the staff is currently employed (1) or not (0)."
+  },
+  {
+    "table_name": "staff",
+    "column_name": "address_id",
+    "description": "Foreign key to the address table."
+  },
+  {
+    "table_name": "staff",
+    "column_name": "email",
+    "description": "Staff email address."
+  },
+  {
+    "table_name": "staff",
+    "column_name": "first_name",
+    "description": "Staff's first name."
+  },
+  {
+    "table_name": "staff",
+    "column_name": "last_name",
+    "description": "Staff's last name."
+  },
+  {
+    "table_name": "staff",
+    "column_name": "last_update",
+    "description": "Timestamp of the last update to this record."
+  },
+  {
+    "table_name": "staff",
+    "column_name": "picture",
+    "description": "Binary image data for staff photo."
+  },
+  {
+    "table_name": "staff",
+    "column_name": "staff_id",
+    "description": "Primary key. Unique identifier for each staff member."
+  },
+  {
+    "table_name": "staff",
+    "column_name": "store_id",
+    "description": "Foreign key to the store where staff works."
+  },
+  {
+    "table_name": "staff",
+    "column_name": "username",
+    "description": "Login username for staff."
+  },
+  {
+    "table_name": "store",
+    "column_name": "address_id",
+    "description": "Foreign key to the address table."
+  },
+  {
+    "table_name": "store",
+    "column_name": "last_update",
+    "description": "Timestamp of the last update to this record."
+  },
+  {
+    "table_name": "store",
+    "column_name": "manager_staff_id",
+    "description": "Foreign key to the staff member managing the store."
+  },
+  {
+    "table_name": "store",
+    "column_name": "store_id",
+    "description": "Primary key. Unique identifier for each store."
+  }
+]

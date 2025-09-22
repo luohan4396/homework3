@@ -1,0 +1,44 @@
+[
+  {
+    "question": "查找所有演员的姓名",
+    "ground_truth": "SELECT first_name, last_name FROM actor",
+    "difficulty": "easy",
+    "category": "basic_select"
+  },
+  {
+    "question": "有多少部电影？",
+    "ground_truth": "SELECT COUNT(*) FROM film",
+    "difficulty": "easy",
+    "category": "aggregation"
+  },
+  {
+    "question": "查找评级为 PG 的电影标题",
+    "ground_truth": "SELECT title FROM film WHERE rating = \"PG\"",
+    "difficulty": "easy",
+    "category": "filtering"
+  },
+  {
+    "question": "查找演员 John 参演的所有电影",
+    "ground_truth": "SELECT f.title \n                                  FROM film f \n                                  JOIN film_actor fa ON f.film_id = fa.film_id \n                                  JOIN actor a ON fa.actor_id = a.actor_id \n                                  WHERE a.first_name = \"John\"",
+    "difficulty": "medium",
+    "category": "join"
+  },
+  {
+    "question": "每个类别有多少部电影？",
+    "ground_truth": "SELECT c.name, COUNT(fc.film_id) as film_count\n                                  FROM category c\n                                  LEFT JOIN film_category fc ON c.category_id = fc.category_id\n                                  GROUP BY c.category_id, c.name",
+    "difficulty": "medium",
+    "category": "group_by"
+  },
+  {
+    "question": "查找租赁次数最多的前5部电影",
+    "ground_truth": "SELECT f.title, COUNT(r.rental_id) as rental_count\n                                  FROM film f\n                                  JOIN inventory i ON f.film_id = i.film_id\n                                  JOIN rental r ON i.inventory_id = r.inventory_id\n                                  GROUP BY f.film_id, f.title\n                                  ORDER BY rental_count DESC\n                                  LIMIT 5",
+    "difficulty": "hard",
+    "category": "complex_aggregation"
+  },
+  {
+    "question": "查找从未被租赁的电影",
+    "ground_truth": "SELECT f.title\n                                  FROM film f\n                                  LEFT JOIN inventory i ON f.film_id = i.film_id\n                                  LEFT JOIN rental r ON i.inventory_id = r.inventory_id\n                                  WHERE r.rental_id IS NULL",
+    "difficulty": "hard",
+    "category": "subquery"
+  }
+]

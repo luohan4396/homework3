@@ -1,0 +1,83 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.db
+*.sqlite
+*.pth
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+*archive/*
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.env
+.venv
+**/venv-rag-langchain*/
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Local development settings
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+
+# Distribution
+dist/
+build/
+
+# Testing
+coverage/
+
+# Misc
+.DS_Store
+Thumbs.db 
+
+**/加餐-llamaindex组件/
+加餐-llamaindex组件/
+data/
+**/data
+
+**/99_其它*/
+**/RAG_LangChain*/
+**/RAG_LlamaIndex*/
+**/04-向量存储-VectorDB/Milvus/volumes/*
+.deepeval/.deepeval_telemetry.txt
+codebase_chunks.json
+evaluation_set.jsonl
+.contextual.db.lock
+.standard.db.lock

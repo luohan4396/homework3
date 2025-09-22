@@ -1,0 +1,71 @@
+{
+  "total_cases": 7,
+  "exact_match_accuracy": 0.42857142857142855,
+  "token_level_accuracy": 0.7378429391731905,
+  "execution_accuracy": 0.0,
+  "detailed_results": [
+    {
+      "question": "查找所有演员的姓名",
+      "predicted": "SELECT first_name, last_name FROM actor",
+      "ground_truth": "SELECT first_name, last_name FROM actor",
+      "exact_match": 1.0,
+      "token_accuracy": 1.0,
+      "execution_accuracy": 0.0,
+      "execution_message": "No database connection"
+    },
+    {
+      "question": "有多少部电影？",
+      "predicted": "SELECT COUNT(*) FROM film",
+      "ground_truth": "SELECT COUNT(*) FROM film",
+      "exact_match": 1.0,
+      "token_accuracy": 1.0,
+      "execution_accuracy": 0.0,
+      "execution_message": "No database connection"
+    },
+    {
+      "question": "查找评级为 PG 的电影标题",
+      "predicted": "SELECT title FROM film WHERE rating = \"PG\"",
+      "ground_truth": "SELECT title FROM film WHERE rating = \"PG\"",
+      "exact_match": 1.0,
+      "token_accuracy": 1.0,
+      "execution_accuracy": 0.0,
+      "execution_message": "No database connection"
+    },
+    {
+      "question": "查找演员 John 参演的所有电影",
+      "predicted": "SELECT title FROM film JOIN film_actor ON film.film_id = film_actor.film_id JOIN actor ON film_actor.actor_id = actor.actor_id WHERE first_name = \"John\"",
+      "ground_truth": "SELECT f.title \n                                  FROM film f \n                                  JOIN film_actor fa ON f.film_id = fa.film_id \n                                  JOIN actor a ON fa.actor_id = a.actor_id \n                                  WHERE a.first_name = \"John\"",
+      "exact_match": 0.0,
+      "token_accuracy": 0.6511627906976745,
+      "execution_accuracy": 0.0,
+      "execution_message": "No database connection"
+    },
+    {
+      "question": "每个类别有多少部电影？",
+      "predicted": "SELECT category.name, COUNT(*) FROM category JOIN film_category ON category.category_id = film_category.category_id GROUP BY category.name",
+      "ground_truth": "SELECT c.name, COUNT(fc.film_id) as film_count\n                                  FROM category c\n                                  LEFT JOIN film_category fc ON c.category_id = fc.category_id\n                                  GROUP BY c.category_id, c.name",
+      "exact_match": 0.0,
+      "token_accuracy": 0.5294117647058824,
+      "execution_accuracy": 0.0,
+      "execution_message": "No database connection"
+    },
+    {
+      "question": "查找租赁次数最多的前5部电影",
+      "predicted": "SELECT film.title, COUNT(rental.rental_id) FROM film JOIN inventory ON film.film_id = inventory.film_id JOIN rental ON inventory.inventory_id = rental.inventory_id GROUP BY film.title ORDER BY COUNT(rental.rental_id) DESC LIMIT 5",
+      "ground_truth": "SELECT f.title, COUNT(r.rental_id) as rental_count\n                                  FROM film f\n                                  JOIN inventory i ON f.film_id = i.film_id\n                                  JOIN rental r ON i.inventory_id = r.inventory_id\n                                  GROUP BY f.film_id, f.title\n                                  ORDER BY rental_count DESC\n                                  LIMIT 5",
+      "exact_match": 0.0,
+      "token_accuracy": 0.6206896551724138,
+      "execution_accuracy": 0.0,
+      "execution_message": "No database connection"
+    },
+    {
+      "question": "查找从未被租赁的电影",
+      "predicted": "SELECT title FROM film WHERE film_id NOT IN (SELECT DISTINCT film_id FROM inventory JOIN rental ON inventory.inventory_id = rental.inventory_id)",
+      "ground_truth": "SELECT f.title\n                                  FROM film f\n                                  LEFT JOIN inventory i ON f.film_id = i.film_id\n                                  LEFT JOIN rental r ON i.inventory_id = r.inventory_id\n                                  WHERE r.rental_id IS NULL",
+      "exact_match": 0.0,
+      "token_accuracy": 0.36363636363636365,
+      "execution_accuracy": 0.0,
+      "execution_message": "No database connection"
+    }
+  ]
+}
